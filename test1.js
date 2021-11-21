@@ -6,7 +6,7 @@ function getStatistics(marks) {
 	var studentnamelowestMark;
 	
 	for(let student of marks){
-		avgMark = avgMark + student.avgMark / marks.length;
+		avgMark = avgMark + student.avgMark;
 		if(student.avgMark > highestMark){
 			highestMark = student.avgMark;
 			studentnamehighestMark = student.name;
@@ -15,7 +15,7 @@ function getStatistics(marks) {
 			lowestMark = student.avgMark;
 			studentnamelowestMark = student.name;
 	}}
-	return {avgMark:avgMark, highestMark:studentnamehighestMark, lowestMark:studentnamelowestMark};		
+	return {avgMark:avgMark / marks.length, highestMark:studentnamehighestMark, lowestMark:studentnamelowestMark};		
 } 
 const testMarks = [{
 name: 'Vasya',
